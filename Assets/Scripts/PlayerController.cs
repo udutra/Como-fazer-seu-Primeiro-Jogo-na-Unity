@@ -25,4 +25,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(forceX * Time.fixedDeltaTime, 0, 0);
         }
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("Colidi com o: " + collision.collider.name);
+    }
 }
