@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
-        forceX = 1000;
-        forceY = 0;
-        forceZ = 500;
+        //forceX = 3600;
+        //forceY = 0;
+        //forceZ = 900;
     }
 
     private void FixedUpdate() {
