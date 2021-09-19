@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8727724885602482033}
   m_Layer: 0
   m_Name: Parede D
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
