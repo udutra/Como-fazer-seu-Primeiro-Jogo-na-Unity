@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
     public int forceX, forceY, forceZ;
     public GameController gameController;
+    public float velocidadeMaximaZ;
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
@@ -16,7 +17,10 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
 
-        rb.AddForce(0, 0, forceZ * Time.fixedDeltaTime);
+
+        if(rb.velocity.z < velocidadeMaximaZ) {
+            rb.AddForce(0, 0, forceZ * Time.fixedDeltaTime);
+        }
 
         if(Input.GetKey("a") == true) {
             rb.AddForce(-forceX * Time.fixedDeltaTime, 0, 0);

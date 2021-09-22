@@ -24,10 +24,9 @@ public class GameController : MonoBehaviour {
 
     public void GameOver() {
         painelGameOver.SetActive(true);
-        Invoke("RecarregarLevel", 2);
     }
 
-    private void RecarregarLevel() {
+    public void RecarregarLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
