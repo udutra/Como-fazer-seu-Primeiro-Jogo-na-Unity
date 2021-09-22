@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
     
     private Vector3 posicaoInicial;
-    public GameObject painelGameOver;
+    public GameObject painelGameOver, painelVitoria;
     public Text txtPontuacao;
     public PlayerController player;
     public float divisorPontuacao;
@@ -20,6 +20,10 @@ public class GameController : MonoBehaviour {
         Vector3 distanciaPercorrida = player.transform.position - posicaoInicial;
         float pontuacao = distanciaPercorrida.z / divisorPontuacao;
         txtPontuacao.text = pontuacao.ToString("0");
+    }
+
+    public void VencerJogo() {
+        painelVitoria.SetActive(true);
     }
 
     public void GameOver() {

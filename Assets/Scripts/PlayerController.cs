@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-
-
         if(rb.velocity.z < velocidadeMaximaZ) {
             rb.AddForce(0, 0, forceZ * Time.fixedDeltaTime);
         }
@@ -50,6 +48,17 @@ public class PlayerController : MonoBehaviour {
                 }
             default:
                 Debug.LogError("Erro no switch no método: OnCollisionEnter do Script PlayerControler!");
+                break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        switch(other.tag) {
+            case "Planeta": {
+                    gameController.VencerJogo();
+                    break;
+                }
+            default:
                 break;
         }
     }
