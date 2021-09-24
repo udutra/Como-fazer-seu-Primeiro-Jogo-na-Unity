@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public int forceX, forceY, forceZ;
     public GameController gameController;
     public float velocidadeMaximaZ;
+    public AudioSource audioSorceExplosao;
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
@@ -31,18 +32,22 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         switch(collision.collider.tag) {
             case "Inimigo1": {
+                    audioSorceExplosao.Play();
                     gameController.GameOver();
                     break;
                 }
             case "Inimigo2": {
+                    audioSorceExplosao.Play();
                     gameController.GameOver();
                     break;
                 }
             case "Inimigo3": {
+                    audioSorceExplosao.Play();
                     gameController.GameOver();
                     break;
                 }
             case "Parede": {
+                    audioSorceExplosao.Play();
                     gameController.GameOver();
                     break;
                 }
