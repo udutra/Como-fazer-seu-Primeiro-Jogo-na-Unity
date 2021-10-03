@@ -95,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14, y: 4, z: 11}
+  m_Size: {x: 12, y: 4, z: 11}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4737493508019715266
 Rigidbody:
@@ -130,3 +130,5 @@ MonoBehaviour:
   forceY: 0
   forceZ: 900
   gameController: {fileID: 0}
+  velocidadeMaximaZ: 110
+  fxExplosaoPrefab: {fileID: 1873492749178295900, guid: 996a8b0c907862049bb879517be7bce4, type: 3}

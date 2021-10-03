@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    
     public Rigidbody rb;
     public int forceX, forceY, forceZ;
     public GameController gameController;
     public float velocidadeMaximaZ;
-    public AudioSource audioSorceExplosao;
+    public GameObject fxExplosaoPrefab;
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
@@ -32,27 +31,31 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         switch(collision.collider.tag) {
             case "Inimigo1": {
-                    audioSorceExplosao.Play();
                     gameController.GameOver();
+                    GameObject.Instantiate(fxExplosaoPrefab, this.transform.position,this.transform.rotation);
+                    Destroy(this.gameObject);
                     break;
                 }
             case "Inimigo2": {
-                    audioSorceExplosao.Play();
                     gameController.GameOver();
+                    GameObject.Instantiate(fxExplosaoPrefab, this.transform.position, this.transform.rotation);
+                    Destroy(this.gameObject);
                     break;
                 }
             case "Inimigo3": {
-                    audioSorceExplosao.Play();
                     gameController.GameOver();
+                    GameObject.Instantiate(fxExplosaoPrefab, this.transform.position, this.transform.rotation);
+                    Destroy(this.gameObject);
                     break;
                 }
             case "Parede": {
-                    audioSorceExplosao.Play();
                     gameController.GameOver();
+                    GameObject.Instantiate(fxExplosaoPrefab, this.transform.position, this.transform.rotation);
+                    Destroy(this.gameObject);
                     break;
                 }
             default:
-                Debug.LogError("Erro no switch no método: OnCollisionEnter do Script PlayerControler!");
+                Debug.LogError("Erro no switch no método: OnCollisionEnter do Script PlayerControler! collision:" + collision.gameObject.name);
                 break;
         }
     }
