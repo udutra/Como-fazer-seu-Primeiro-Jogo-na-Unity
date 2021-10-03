@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     public Text txtPontuacao;
     public PlayerController player;
     public float divisorPontuacao;
+    public AudioClip sfxVenceuJogo;
+    public AudioController audioController;
 
     private void Start() {
         posicaoInicial = player.transform.position;
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour {
 
     public void VencerJogo() {
         painelVitoria.SetActive(true);
+        audioController.ToqueSFX(sfxVenceuJogo);
     }
 
     public void GameOver() {
