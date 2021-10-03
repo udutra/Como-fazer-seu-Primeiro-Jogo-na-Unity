@@ -480,6 +480,7 @@ MonoBehaviour:
   divisorPontuacao: 25
   sfxVenceuJogo: {fileID: 8300000, guid: 707fdcd8e0d2d4a4b91c81c5484cabe0, type: 3}
   audioController: {fileID: 87122199}
+  levaNaveAoPlaneta: {fileID: 1759006986}
 --- !u!4 &306337849
 Transform:
   m_ObjectHideFlags: 0
@@ -958,6 +959,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &710978513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3517628020257727895, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
+  m_PrefabInstance: {fileID: 3455394081078074062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &921134369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1202,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4737493508019715273, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
   m_PrefabInstance: {fileID: 4737493506923047333}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1759006980}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 271a4e7fa6ec6554e82a9e06f9adec06, type: 3}
@@ -1650,6 +1656,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c5d4a1b7ff49d45aaf70670024adbc, type: 3}
+--- !u!1 &1759006980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4737493508019715267, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
+  m_PrefabInstance: {fileID: 4737493506923047333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1759006981 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4737493508019715266, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
+  m_PrefabInstance: {fileID: 4737493506923047333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759006986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759006980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982618210a038034a8780b7ad4ec20b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1122358636}
+  seguirJogador: {fileID: 963194229}
+  planeta: {fileID: 710978513}
+  forcaAoPlaneta: 3000
 --- !u!4 &1797828578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4171875433040626361, guid: a5c5d4a1b7ff49d45aaf70670024adbc, type: 3}
@@ -1864,16 +1896,28 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -42.8
       objectReference: {fileID: 0}
     - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 94.6
+      value: 220.3
       objectReference: {fileID: 0}
     - target: {fileID: 4295009767016660781, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1909,11 +1953,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8704732362544928948, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_Size.y
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8704732362544928948, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_Size.z
-      value: 25
+      value: 498.1
       objectReference: {fileID: 0}
     - target: {fileID: 8704732362544928948, guid: d183be5ce7ca3254098b98f598d98aa0, type: 3}
       propertyPath: m_Center.x
@@ -1931,6 +1975,14 @@ PrefabInstance:
     - target: {fileID: 4737493508019715267, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737493508019715273, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1759006981}
+    - target: {fileID: 4737493508019715273, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4737493508019715273, guid: a6ffa921d781a2b49bffe24ab181e09c, type: 3}
       propertyPath: gameController
@@ -1992,6 +2044,10 @@ PrefabInstance:
     - target: {fileID: 1694174256296789179, guid: eb3a046746968e14785ea8fa96e2ae8c, type: 3}
       propertyPath: m_Name
       value: Bloco1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694174256296789179, guid: eb3a046746968e14785ea8fa96e2ae8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2712529044129070811, guid: eb3a046746968e14785ea8fa96e2ae8c, type: 3}
       propertyPath: m_RootOrder

@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
     public float divisorPontuacao;
     public AudioClip sfxVenceuJogo;
     public AudioController audioController;
+    public LevaNaveAoPlaneta levaNaveAoPlaneta;
 
     private void Start() {
         posicaoInicial = player.transform.position;
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour {
     public void VencerJogo() {
         painelVitoria.SetActive(true);
         audioController.ToqueSFX(sfxVenceuJogo);
+        levaNaveAoPlaneta.LeveNaveAoPlaneta();
     }
 
     public void GameOver() {
