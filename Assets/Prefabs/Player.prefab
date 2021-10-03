@@ -131,4 +131,6 @@ MonoBehaviour:
   forceZ: 900
   gameController: {fileID: 0}
   velocidadeMaximaZ: 110
+  anguloAlvo: 30
+  velocidadeRotacao: 5
   fxExplosaoPrefab: {fileID: 1873492749178295900, guid: 996a8b0c907862049bb879517be7bce4, type: 3}

@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
     public int forceX, forceY, forceZ;
     public GameController gameController;
-    public float velocidadeMaximaZ;
+    public float velocidadeMaximaZ, anguloAlvo, velocidadeRotacao;
     public GameObject fxExplosaoPrefab;
 
     private void Start() {
@@ -22,9 +22,24 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetKey("a") == true) {
             rb.AddForce(-forceX * Time.fixedDeltaTime, 0, 0);
+            Quaternion rotacaoAtual = rb.rotation;
+            Quaternion rotacaoAlvo = Quaternion.Euler(0, 0, anguloAlvo);
+            Quaternion novaRotacao = Quaternion.Lerp(rotacaoAtual, rotacaoAlvo, Time.fixedDeltaTime * velocidadeRotacao);
+            rb.MoveRotation(novaRotacao);
         }
-        if(Input.GetKey("d") == true) {
+        else if(Input.GetKey("d") == true) {
             rb.AddForce(forceX * Time.fixedDeltaTime, 0, 0);
+            Quaternion rotacaoAtual = rb.rotation;
+            Quaternion rotacaoAlvo = Quaternion.Euler(0, 0, -anguloAlvo);
+            Quaternion novaRotacao = Quaternion.Lerp(rotacaoAtual, rotacaoAlvo, Time.fixedDeltaTime * velocidadeRotacao);
+            rb.MoveRotation(novaRotacao);
+        }
+
+        else {
+            Quaternion rotacaoAtual = rb.rotation;
+            Quaternion rotacaoAlvo = Quaternion.Euler(0, 0, 0);
+            Quaternion novaRotacao = Quaternion.Lerp(rotacaoAtual, rotacaoAlvo, Time.fixedDeltaTime * velocidadeRotacao);
+            rb.MoveRotation(novaRotacao);
         }
     }
 
