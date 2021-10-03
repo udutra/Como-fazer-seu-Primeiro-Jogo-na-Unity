@@ -39,4 +39,8 @@ public class GameController : MonoBehaviour {
     public void RecarregarLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void SairDoJogo() {
+        Application.Quit();
+    }
 }
